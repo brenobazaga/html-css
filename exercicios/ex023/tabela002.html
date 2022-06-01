@@ -13,6 +13,7 @@
         table {
             width: 500px;
             border-collapse: collapse;
+            position: relative;
 
         }
 
@@ -22,8 +23,14 @@
         }
 
         thead, tfoot {
-            background-color: gray;
+            background-color: rgb(39, 38, 38);
             color: white;
+        }
+
+        thead >tr > th {
+            position: sticky;
+            top: -1px;
+            background-color: rgb(39, 38, 38);
         }
 
         .num {
@@ -34,6 +41,10 @@
             font-size: 1.5em;
             font-weight: bold;
             padding: 10px;
+            background-color: lightgray;
+        }
+
+        tbody tr:nth-child(2n) { /*efeito zebrado*/
             background-color: lightgray;
         }
     </style>
@@ -54,7 +65,7 @@
         <thead>
             <tr>
                 <th scope="col">Estado</th>
-                <th scope="col">População</th>
+                <th scope="col" style="width: 50px;">População</th>
             </tr>
         </thead>
         <tbody>
@@ -101,7 +112,7 @@
         </tbody>
         <tfoot>
             <tr>
-                <th scope="col">Total de habitantes</th>
+                <th scope="row">Total de habitantes</th>
                 <td class="num"><strong>156.136.219</strong></td>
             </tr>
         </tfoot>
